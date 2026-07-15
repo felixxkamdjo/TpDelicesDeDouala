@@ -1,59 +1,44 @@
-# TpDelicesDeDouala
+# Délices de Douala
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.1.
+Système de notation de restaurants camerounais construit avec Angular - pratique intensive de `input()` et `output()` sur 3 niveaux de composants.
 
-## Development server
+## À propos
 
-To start a local development server, run:
+Une interface web qui permet de noter de 1 à 5 étoiles les meilleurs restaurants de Douala, avec un compteur en temps réel du nombre d'établissements notés. Projet réalisé dans le cadre de l'**Angular Talent Lab 2026** (cohorte Douala).
 
-```bash
-ng serve
-```
+Les données sont volontairement ancrées dans le réel : quartiers de Douala (Akwa, Bonapriso, Bonanjo, Bali, Bonamoussadi) et spécialités culinaires camerounaises authentiques (Ndolé, Eru, Koki, Bobolo...).
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Fonctionnalités
 
-## Code scaffolding
+- Grille de 6 restaurants avec notation par étoiles cliquables
+- Effet hover doré sur les étoiles au survol
+- Compteur en temps réel : `★ X / 6 restaurants notés`
+- Architecture propagée sur 3 niveaux : `App > RestaurantList > RestaurantCard > StarRating`
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Stack technique
 
-```bash
-ng generate component component-name
-```
+- **Angular** (Standalone Components, zoneless-ready)
+- **Signals** pour la gestion d'état (`signal()`, `computed()`)
+- **Control flow moderne** : `@if` / `@for` (aucun `*ngIf` / `*ngFor`)
+- **input() / output()** - pas de décorateurs `@Input` / `@Output`
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Architecture des composants
+App
+└── Header               [ratedCount] ↓
+└── RestaurantList        (restaurantRated) ↑
+└── RestaurantCard × 6
+└── StarRating    [currentRating] ↓ / (ratingChanged) ↑
 
-```bash
-ng generate --help
-```
+## Lancer le projet
 
-## Building
+\`\`\`bash
+npm install
+npm start
+\`\`\`
 
-To build the project run:
+## Démo
 
-```bash
-ng build
-```
+[Voir sur Vercel](TON_URL_VERCEL_ICI)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
