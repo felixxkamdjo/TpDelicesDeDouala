@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --green-900: #1b4332;
+  --green-700: #2d6a4f;
+  --green-500: #40916c;
+  --green-100: #d8f3dc;
+
+  --yellow-500: #ffc107;
+  --yellow-300: #ffe082;
+
+  --gray-900: #212529;
+  --gray-600: #6c757d;
+  --gray-300: #dee2e6;
+  --gray-100: #f5f6f5;
+
+  --radius: 14px;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--gray-100);
+  color: var(--gray-900);
+}

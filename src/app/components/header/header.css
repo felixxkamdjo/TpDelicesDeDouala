@@ -1,0 +1,56 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--green-900);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon { font-size: 1.6rem; }
+
+.brand h1 {
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.header-stats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.badge-count {
+  background: var(--green-500);
+  color: white;
+}
+
+.badge-average {
+  background: var(--yellow-500);
+  color: var(--gray-900);
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 18px;
+  }
+}

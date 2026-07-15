@@ -1,0 +1,24 @@
+<section class="list-wrapper">
+  <div class="toolbar">
+    <h2>Restaurants camerounais</h2>
+
+    <div class="toolbar-actions">
+      <!-- Bonus : filtre ≥ 4 étoiles -->
+      <button
+        class="btn btn-outline"
+        [class.active]="showTopRatedOnly()"
+        (click)="toggleFilter()">
+        ★ 4+ seulement
+      </button>
+    </div>
+  </div>
+
+  <div class="restaurant-grid">
+    @for (restaurant of restaurants(); track restaurant.id) {
+      <app-restaurant-card
+        [restaurant]="restaurant"
+        (restaurantRated)="onRestaurantRated($event)">
+      </app-restaurant-card>
+    }
+  </div>
+</section>

@@ -1,0 +1,18 @@
+<div class="star-rating">
+  <div class="stars">
+    @for (star of [1, 2, 3, 4, 5]; track star) {
+      <span
+        class="star"
+        [class.filled]="star <= (hoveredStar() || currentRating())"
+        (mouseenter)="hoveredStar.set(star)"
+        (mouseleave)="hoveredStar.set(0)"
+        (click)="setRating(star)">
+        ★
+      </span>
+    }
+  </div>
+
+  <span class="rating-label">
+    {{ currentRating() > 0 ? currentRating() + '/5' : 'Cliquez !' }}
+  </span>
+</div>

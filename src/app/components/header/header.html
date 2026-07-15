@@ -1,0 +1,19 @@
+<header class="app-header">
+  <div class="brand">
+    <span class="brand-icon">🍽️</span>
+    <h1>Les Delices de Douala</h1>
+  </div>
+
+  <div class="header-stats">
+    <span class="badge badge-count">
+      ★ {{ ratedCount() }} / 6 restaurants notés
+    </span>
+
+    <!-- Bonus : note moyenne -->
+    @if (averageRating() > 0) {
+      <span class="badge badge-average">
+        ★ {{ averageRating() }}/5 moyenne
+      </span>
+    }
+  </div>
+</header>
