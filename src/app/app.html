@@ -1,2 +1,9 @@
-<app-header [ratedCount]="countRatedRestaurants()"></app-header>
-<app-restaurant-list [restaurants]="restaurants()"></app-restaurant-list>
+@if (currentPage() === 'register') {
+  <app-inscription />
+} @else {
+  <app-header
+    [ratedCount]="countRatedRestaurants()"
+    (onNavigateToRegister)="currentPage.set('register')">
+  </app-header>
+  <app-restaurant-list [restaurants]="restaurants()"></app-restaurant-list>
+}

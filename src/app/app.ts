@@ -4,14 +4,21 @@ import { Header } from "./components/header/header";
 import { RestaurantList } from "./components/restaurant-list/restaurant-list";
 import { Restaurant, PartialRestaurant } from './models/restaurant.model';
 import { RESTAURANTS_MOCK } from './data/restaurant.mock';
+import { Inscription } from "./components/inscription/inscription";
+
+type Page = 'home' | 'register';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, RestaurantList],
+  standalone: true,
+  imports: [RouterOutlet, Header, RestaurantList, Inscription],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
+
 export class App {
+  public currentPage  = signal<Page>('home');
+
   protected readonly title = signal('tp-delices-de-douala');
 
   public restaurants = signal<Restaurant[]>(RESTAURANTS_MOCK);

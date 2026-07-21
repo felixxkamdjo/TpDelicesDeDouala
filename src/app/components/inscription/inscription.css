@@ -1,0 +1,134 @@
+:host {
+  display: block;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: var(--green-900);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--green-100);
+  padding-bottom: 0.75rem;
+}
+
+.form-inline {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.form-inline input[type="text"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--gray-300);
+  border-radius: calc(var(--radius) - 4px);
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.form-inline input[type="text"]:focus {
+  border-color: var(--green-500);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.15);
+}
+
+.form-inline button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--green-700);
+  border: none;
+  border-radius: calc(var(--radius) - 4px);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.form-inline button:hover {
+  background-color: var(--green-900);
+}
+
+.form-inline button:active {
+  transform: scale(0.98);
+}
+
+p {
+  color: var(--gray-600);
+  font-style: italic;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ligne {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--gray-100);
+  border-radius: calc(var(--radius) - 6px);
+  border: 1px solid var(--gray-300);
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.ligne:hover {
+  background-color: var(--green-100);
+  border-color: var(--green-500);
+}
+
+.ligne span:first-child {
+  font-weight: 500;
+  color: var(--gray-900);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.actions button:hover {
+  opacity: 0.85;
+}
+
+.actions button:active {
+  transform: scale(0.95);
+}
+
+.actions button:nth-child(1) {
+  background-color: var(--yellow-500);
+  color: var(--gray-900);
+}
+
+.actions button:nth-child(2) {
+  background-color: #e63946;
+  color: #ffffff;
+}

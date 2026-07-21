@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,4 +9,10 @@ import { Component, input } from '@angular/core';
 export class Header {
   public ratedCount = input<number>(0);
   public averageRating = input<number>(0);
+
+  public onNavigateToRegister = output<void>();
+
+  public goToRegister(): void {
+    this.onNavigateToRegister.emit()
+  }
 }

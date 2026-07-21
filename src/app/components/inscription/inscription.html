@@ -1,0 +1,28 @@
+<h1>Délices de Douala - Inscriptions</h1>
+
+<form class="form-inline">
+  <input type="text" name="nom"
+          placeholder="Nom du client"
+          [(ngModel)]="name"
+  />
+  <button type="button" (click)="save()">
+    {{ inEdition() ? 'Update' : 'Add' }}
+  </button>
+</form>
+
+@if (clients().length === 0) {
+  <p>No clients saved.</p>
+}
+@else {
+  <ul>
+    @for (client of clients(); track $index; let i = $index) {
+      <li class="ligne">
+        <span>{{ client }}</span>
+        <span class="actions">
+          <button type="button" class="btn-edit" (click)="edit(i)">Edit</button>
+          <button type="button" class="btn-delete" (click)="delete(i)">Delete</button>
+        </span>
+      </li>
+    }
+  </ul>
+}
